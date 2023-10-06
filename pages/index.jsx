@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 
 export default function Home() {
-  let i=0;
+  let i=-1;
   const quadrados = lista;
 
   useEffect(() => {
@@ -43,7 +43,8 @@ export default function Home() {
       if (quadrados[482] == 2) {
         console.log("oi 9vinha")
       }
-      console.log(lista)
+     lista = quadrados;
+     console.log(quadrados);
     });
   })
 
@@ -55,7 +56,7 @@ export default function Home() {
         {quadrados.map(quadrado => {
           i++;
           if (quadrado == 1) {
-            return <Quadrado parede key={i} />
+            return <Quadrado parede key={i}/>
           } else if (quadrado == 2) {
             return <Quadrado key={i} />
           }
