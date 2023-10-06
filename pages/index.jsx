@@ -33,7 +33,6 @@ export default function Home() {
           }
         }
 
-
       } else if (tecla == 'd' || tecla == 'D') {
         if (quadrados[quadrados.indexOf(2) + 1] != 1) {
           quadrados[indice] = 0;
@@ -44,6 +43,7 @@ export default function Home() {
       if (quadrados[482] == 2) {
         console.log("oi 9vinha")
       }
+      console.log(lista)
     });
   })
 
