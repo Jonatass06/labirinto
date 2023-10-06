@@ -29,42 +29,46 @@ export default function Home() {
 
 
   )
-  
+
   useEffect(() => {
     document.body.addEventListener("keydown", (event) => {
       let quadradosTeste = [...quadrados];
       let tecla = event.key;
       let indice = quadrados.indexOf(2);
 
-      if (tecla == 'w') {
+      if (tecla == 'w' || tecla == 'W') {
         if (quadrados.indexOf(2) - 23 >= 0) {
           if (quadrados[quadrados.indexOf(2) - 23] != 1) {
             quadradosTeste[indice - 23] = 2;
             quadradosTeste[indice] = 0;
           }
         }
-      } else if (tecla == 'a') {
+      } else if (tecla == 'a' || tecla == 'A') {
         if (quadrados[quadrados.indexOf(2) - 1] != 1) {
           quadradosTeste[indice] = 0;
-          quadradosTeste[indice-1] = 2;
+          quadradosTeste[indice - 1] = 2;
         }
 
-      } else if (tecla == 's') {
+      } else if (tecla == 's' || tecla == 'S') {
         if (quadrados.indexOf(2) + 23 < 506) {
           if (quadrados[quadrados.indexOf(2) + 23] != 1) {
-quadradosTeste[indice + 23] = 2;
-quadradosTeste[indice] = 0;
+            quadradosTeste[indice + 23] = 2;
+            quadradosTeste[indice] = 0;
           }
         }
 
 
-      } else if (tecla == 'd') {
+      } else if (tecla == 'd' || tecla == 'D') {
         if (quadrados[quadrados.indexOf(2) + 1] != 1) {
           quadradosTeste[indice] = 0;
-          quadradosTeste[indice+1] = 2;
+          quadradosTeste[indice + 1] = 2;
         }
       }
       setQuadrados(quadradosTeste);
+
+      if (quadrados[482] == 2) {
+        console.log("oi 9vinha")
+      }
     });
   })
 
