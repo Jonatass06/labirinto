@@ -39,12 +39,9 @@ export default function Home() {
           quadrados[indice + 1] = 2;
         }
       }
-
       if (quadrados[482] == 2) {
         console.log("oi 9vinha")
       }
-     lista = quadrados;
-     console.log(quadrados);
     });
   })
 
@@ -58,7 +55,7 @@ export default function Home() {
           if (quadrado == 1) {
             return <Quadrado parede key={i}/>
           } else if (quadrado == 2) {
-            return <Quadrado key={i} />
+            return <Quadrado key={i} isHere />
           }
           return <Quadrado key={i} />
         })}
