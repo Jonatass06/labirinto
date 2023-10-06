@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 
 export default function Home() {
+  let i=0;
   const [quadrados, setQuadrados] = useState(
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
       2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1,
@@ -83,13 +84,13 @@ export default function Home() {
 
       <div className="flex  flex-wrap w-[736px]">
         {quadrados.map(quadrado => {
-
+          i++;
           if (quadrado == 1) {
-            return <Quadrado parede />
+            return <Quadrado parede key={i} />
           } else if (quadrado == 2) {
-            return <Quadrado isHere />
+            return <Quadrado isHere key={i} />
           }
-          return <Quadrado />
+          return <Quadrado key={i} />
         })}
 
       </div>
