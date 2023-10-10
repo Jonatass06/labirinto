@@ -17,7 +17,8 @@ export default function Quadrado(props) {
         });
     })
     // Definindo a cor do quadrado
-    let cor = props.parede ? "bg-black" : "bg-white";
+    let cor = props.parede ? "bg-black" : props.chave == 0 ? "bg-white": "bg-blue-500";
+    
     return (
         <>
             <div className={"w-8 h-8 " + cor} >

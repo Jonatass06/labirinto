@@ -12,13 +12,13 @@ export default function atualizarArray(event) {
     if (indice - 23 >= 0) {
       if (quadrados[indice - 23] != 1) {
         quadrados[indice - 23] = 2;
-        quadrados[indice] = 0;
+        quadrados[indice] = 3;
       }
     }
     // Andando para a esquerda
   } else if (tecla == "a" || tecla == "A") {
     if (quadrados[indice - 1] != 1) {
-      quadrados[indice] = 0;
+      quadrados[indice] = 3;
       quadrados[indice - 1] = 2;
     }
     // Andando para baixo
@@ -26,14 +26,14 @@ export default function atualizarArray(event) {
     if (indice + 23 < 506) {
       if (quadrados[indice + 23] != 1) {
         quadrados[indice + 23] = 2;
-        quadrados[indice] = 0;
+        quadrados[indice] =3;
       }
     }
     // Andando para a direita
   } else if (tecla == "d" || tecla == "D") {
     if (quadrados[indice + 1] != 1) {
       quadrados[indice + 1] = 2;
-      quadrados[indice] = 0;
+      quadrados[indice] = 3;
     }
   }
 }
