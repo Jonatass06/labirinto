@@ -1,8 +1,8 @@
 import Quadrado from "@/components/quadrado"
 import lista from "@/data/lista";
 import { useEffect, useState } from "react";
-import atualizarArray from "./atualizarArray";
-import criarTabuleiro from "./criarTabuleiro";
+import atualizarArray from "../data/atualizarArray";
+import criarTabuleiro from "../data/criarTabuleiro";
 
 
 export default function Home() {
@@ -12,8 +12,10 @@ export default function Home() {
   const [modal, setModal] = useState(false)
 
   useEffect(() => {
+    // Funcao que inicia o tabuleiro
     criarTabuleiro();
     document.body.addEventListener("keydown", (event) => {
+      // Funcao que atualiza o array de acordo com a tecla clicada
       atualizarArray(event)
       // Vitória
       if (quadrados[482] == 2) {
@@ -28,9 +30,11 @@ export default function Home() {
     setModal(true);
   }
 
+  // Funcao que reinicia o tabuleiro
   function iniciar(){
     setModal(false);
     criarTabuleiro();
+    document.dispatchEvent(new KeyboardEvent('keypress', {'key': ''}));
   }
 
   return (
