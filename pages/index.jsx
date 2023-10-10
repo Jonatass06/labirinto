@@ -29,10 +29,10 @@ export default function Home() {
 
   // Funcao que reinicia o tabuleiro
   function iniciar(){
-    lista[482] = 0;
-    lista[23] = 2;
+    quadrados[482] = 0;
+    quadrados[23] = 2;
     setModal(false)
-    document.dispatchEvent(new KeyboardEvent('keypress', {'key': 'a'}));
+    window.dispatchEvent(new KeyboardEvent('keypress', {'key': 'a'}));
   }
 
   return (
