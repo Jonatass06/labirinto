@@ -20,7 +20,7 @@ export default function Quadrado(props) {
     let cor = props.parede ? "bg-black" : "bg-white";
     return (
         <>
-            <div className={"w-8 h-8 " + cor} >
+            <div className={"w-8 h-8 " + cor + " rounded-full"} >
                 {
                     isHere && <img src="VASCO.png" alt="" />
                 }
