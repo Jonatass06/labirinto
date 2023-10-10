@@ -34,6 +34,7 @@ export default function Home() {
   function iniciar(){
     setModal(false);
     criarTabuleiro();
+    console.log("a")
     document.dispatchEvent(new KeyboardEvent('keypress', {'key': ''}));
   }
 
