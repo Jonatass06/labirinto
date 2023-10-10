@@ -8,7 +8,7 @@ import criarTabuleiro from "../data/criarTabuleiro";
 export default function Home() {
 
   let i = -1;
-  let quadrados = lista;
+  const quadrados = lista;
   const [modal, setModal] = useState(false)
 
   useEffect(() => {

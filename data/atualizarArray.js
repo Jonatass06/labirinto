@@ -1,4 +1,4 @@
-import lista from "@/data/lista";
+import lista from "./lista";
 
 export default function atualizarArray(event) {
   const quadrados = lista;
