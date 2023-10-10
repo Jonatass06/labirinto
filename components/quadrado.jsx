@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function Quadrado(props){
 
-    const [isHere, setIsHere] = useState(props.isHere);
+    const [isHere, setIsHere] = useState(props.isHere );
 
     useEffect(() => {
         document.body.addEventListener("keydown", (event) => {
