@@ -9,7 +9,7 @@ export default function atualizarArray(){
         let indice = quadrados.indexOf(2);
   
         // Andando para cima
-        if (tecla == 'w' || tecla == 'W' || tecla == "ArrowUp") {
+        if (tecla == 'w' || tecla == 'W') {
           if (indice - 23 >= 0) {
             if (quadrados[indice - 23] != 1) {
               quadrados[indice - 23] = 2;
@@ -17,13 +17,13 @@ export default function atualizarArray(){
             }
           }
           // Andando para a esquerda
-        } else if (tecla == 'a' || tecla == 'A' || tecla == "ArrowLeft") {
+        } else if (tecla == 'a' || tecla == 'A') {
           if (quadrados[indice - 1] != 1) {
             quadrados[indice] = 0;
             quadrados[indice - 1] = 2;
           }
           // Andando para baixo
-        } else if (tecla == 's' || tecla == 'S' || tecla == "ArrowDown") {
+        } else if (tecla == 's' || tecla == 'S') {
           if (indice + 23 < 506) {
             if (quadrados[indice + 23] != 1) {
               quadrados[indice + 23] = 2;
@@ -31,7 +31,7 @@ export default function atualizarArray(){
             }
           }
           // Andando para a direita
-        } else if (tecla == 'd' || tecla == 'D' || tecla == "ArrowRight") {
+        } else if (tecla == 'd' || tecla == 'D') {
           if (quadrados[indice + 1] != 1) {
             quadrados[indice + 1] = 2;
             quadrados[indice] = 0;
