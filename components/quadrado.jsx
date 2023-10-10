@@ -16,13 +16,15 @@ export default function Quadrado(props) {
             }
         });
     })
-    // Definindo a cor do quadrado
-    let cor = props.parede ? "bg-black" : "bg-white";
+
     return (
         <>
-            <div className={"w-8 h-8 " + cor + " rounded-full"} >
+            <div className={"w-8 h-8 rounded-full"} >
                 {
                     isHere && <img src="VASCO.png" alt="" />
+                }
+                {
+                    props.parede && <img src="bolaVasco.webp" alt="" />
                 }
             </div>
         </>
