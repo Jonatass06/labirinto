@@ -37,6 +37,5 @@ export default function atualizarArray(){
             quadrados[indice] = 0;
           }
         }
-        return quadrados;
       });
 }

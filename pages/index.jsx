@@ -6,11 +6,12 @@ import atualizarArray from "./atualizarArray";
 
 export default function Home() {
 
+  let i = -1;
   let quadrados = lista;
   const [modal, setModal] = useState(false)
 
   useEffect(() => {
-    quadrados = atualizarArray()
+    atualizarArray()
     // Vitória
     if (quadrados[482] == 2) {
       ganhou();
@@ -28,16 +29,17 @@ export default function Home() {
 
       <div className="flex  flex-wrap w-[736px]">
         {quadrados.map(quadrado => {
+          i++;
           // Paredas
           if (quadrado == 1) {
-            return <Quadrado parede key={quadrados.indexOf(quadrado)} isHere={false} chave={i} />
+            return <Quadrado parede key={i} isHere={false} chave={i} />
           }
           // Quadrado do vasco
           else if (quadrado == 2) {
-            return <Quadrado key={quadrados.indexOf(quadrado)} isHere chave={i} />
+            return <Quadrado key={i} isHere chave={i} />
           }
           // Caminho
-          return <Quadrado key={quadrados.indexOf(quadrado)} isHere={false} chave={i} />
+          return <Quadrado key={i} isHere={false} chave={i} />
         })}
 
       </div>
