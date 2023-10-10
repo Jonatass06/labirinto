@@ -43,6 +43,7 @@ export default function Home() {
           console.log("oi 9vinha")
         }
       });
+
     })
 
   return (
