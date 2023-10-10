@@ -13,7 +13,6 @@ export default function Quadrado(props) {
             } else {
                 setIsHere(false);
             }
-            console.log("sasdas")
         });
     })
 
