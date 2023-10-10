@@ -36,8 +36,8 @@ export default function Home() {
 
       } else if (tecla == 'd' || tecla == 'D') {
         if (quadrados[indice + 1] != 1) {
-          quadrados[indice] = 0;
           quadrados[indice + 1] = 2;
+          quadrados[indice] = 0;
         }
       }
       if (quadrados[482] == 2) {
