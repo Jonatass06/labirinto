@@ -12,8 +12,6 @@ export default function Home() {
   const [modal, setModal] = useState(false)
 
   useEffect(() => {
-    // Funcao que inicia o tabuleiro
-    criarTabuleiro();
     document.body.addEventListener("keydown", (event) => {
       // Funcao que atualiza o array de acordo com a tecla clicada
       atualizarArray(event)
@@ -29,15 +27,6 @@ export default function Home() {
     new Audio("Vitoria.mp3").play();
     setModal(true);
   }
-
-  // Funcao que reinicia o tabuleiro
-  function iniciar(){
-    setModal(false);
-    criarTabuleiro();
-    console.log("a")
-    document.dispatchEvent(new KeyboardEvent('keypress', {'key': ''}));
-  }
-
   return (
     <div className="w-screen h-screen flex justify-center items-center">
 
@@ -62,7 +51,7 @@ export default function Home() {
         modal &&
         <div className="absolute top-0 right-0 left-0 bottom-0 backdrop-blur-[5px] flex justify-center items-center">
           <div className="bg-white shadow-10 border-4 h-2/4 w-2/6 rounded-md text-yellow-500 flex items-center justify-center text-4xl relative">
-            <button className="absolute top-2 right-4 text-xl" onClick={() => { iniciar() }}>x</button>
+            <button className="absolute top-2 right-4 text-xl" onClick={() => {setModal(false)}}>x</button>
             Você ganhou!
           </div>
         </div>
