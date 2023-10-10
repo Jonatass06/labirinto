@@ -11,7 +11,7 @@ export default function Quadrado(props) {
             if (lista[props.chave] == 2) {
                 setIsHere(true);
             } else {
-                setIsHere(false);
+                setIsHere(undefined);
             }
             console.log(isHere)
         });
