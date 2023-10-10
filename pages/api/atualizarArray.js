@@ -1,5 +1,7 @@
+import lista from "@/data/lista";
 
 export default function enventoAlterarArray() {
+  const quadrados = lista
   document.body.addEventListener("keyup", async(event) => {
     let tecla = event.key;
     let indice = quadrados.indexOf(2);
