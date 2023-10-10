@@ -10,6 +10,7 @@ export default function Home() {
     useEffect(() => {
       document.body.addEventListener("keydown", (event) => {
         let tecla = event.key;
+        console.log(tecla)
         let indice = quadrados.indexOf(2);
 
         if (tecla == 'w' || tecla == 'W') {
@@ -24,7 +25,6 @@ export default function Home() {
             quadrados[indice] = 0;
             quadrados[indice - 1] = 2;
           }
-
         } else if (tecla == 's' || tecla == 'S') {
           if (indice + 23 < 506) {
             if (quadrados[indice + 23] != 1) {
@@ -32,7 +32,6 @@ export default function Home() {
               quadrados[indice] = 0;
             }
           }
-
         } else if (tecla == 'd' || tecla == 'D') {
           if (quadrados[indice + 1] != 1) {
             quadrados[indice + 1] = 2;
