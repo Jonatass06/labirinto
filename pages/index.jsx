@@ -11,11 +11,13 @@ export default function Home() {
   const [modal, setModal] = useState(false)
 
   useEffect(() => {
-    atualizarArray()
-    // Vitória
-    if (quadrados[482] == 2) {
-      ganhou();
-    }
+    document.body.addEventListener("keydown", (event) => {
+      atualizarArray(event)
+      // Vitória
+      if (quadrados[482] == 2) {
+        ganhou();
+      }
+    })
   })
 
   // Funcao que mosta o modal e toca a musica de vitoria
