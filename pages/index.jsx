@@ -2,6 +2,7 @@ import Quadrado from "@/components/quadrado"
 import lista from "@/data/lista";
 import { useEffect, useState } from "react";
 import atualizarArray from "./atualizarArray";
+import criarTabuleiro from "./criarTabuleiro";
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
   const [modal, setModal] = useState(false)
 
   useEffect(() => {
+    criarTabuleiro();
     document.body.addEventListener("keydown", (event) => {
       atualizarArray(event)
       // Vitória
@@ -24,6 +26,11 @@ export default function Home() {
   function ganhou() {
     new Audio("Vitoria.mp3").play();
     setModal(true);
+  }
+
+  function iniciar(){
+    setModal(false);
+    criarTabuleiro();
   }
 
   return (
@@ -50,7 +57,7 @@ export default function Home() {
         modal &&
         <div className="absolute top-0 right-0 left-0 bottom-0 backdrop-blur-[5px] flex justify-center items-center">
           <div className="bg-white shadow-10 border-4 h-2/4 w-2/6 rounded-md text-yellow-500 flex items-center justify-center text-4xl relative">
-            <button className="absolute top-2 right-4 text-xl" onClick={() => { setModal(false) }}>x</button>
+            <button className="absolute top-2 right-4 text-xl" onClick={() => { iniciar() }}>x</button>
             Você ganhou!
           </div>
         </div>
