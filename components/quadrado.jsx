@@ -7,7 +7,7 @@ export default function Quadrado(props) {
     const quadrados = lista;
 
     useEffect(() => {
-        document.body.addEventListener("keyup", (event) => {
+        document.body.addEventListener("keypress", (event) => {
             if (lista[props.chave] == 2) {
                 setIsHere(true);
             } else {
