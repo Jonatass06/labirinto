@@ -6,44 +6,57 @@ import { useEffect, useState } from "react";
 export default function Home() {
   let i = -1;
   const quadrados = lista; 
+  const[modal, setModal] = useState(false)
 
     useEffect(() => {
       document.body.addEventListener("keydown", (event) => {
+        // Tecla pressionada
         let tecla = event.key;
         console.log(tecla)
+        // Indice do vasco no tabuleiro
         let indice = quadrados.indexOf(2);
 
-        if (tecla == 'w' || tecla == 'W') {
+        // Andando para cima
+        if (tecla == 'w' || tecla == 'W' || tecla == "ArrowUp") {
           if (indice - 23 >= 0) {
             if (quadrados[indice - 23] != 1) {
               quadrados[indice - 23] = 2;
               quadrados[indice] = 0;
             }
           }
-        } else if (tecla == 'a' || tecla == 'A') {
+          // Andando para a esquerda
+        } else if (tecla == 'a' || tecla == 'A' || tecla == "ArrowLeft") {
           if (quadrados[indice - 1] != 1) {
             quadrados[indice] = 0;
             quadrados[indice - 1] = 2;
           }
-        } else if (tecla == 's' || tecla == 'S') {
+          // Andando para baixo
+        } else if (tecla == 's' || tecla == 'S'  || tecla == "ArrowDown") {
           if (indice + 23 < 506) {
             if (quadrados[indice + 23] != 1) {
               quadrados[indice + 23] = 2;
               quadrados[indice] = 0;
             }
           }
-        } else if (tecla == 'd' || tecla == 'D') {
+          // Andando para a direita
+        } else if (tecla == 'd' || tecla == 'D'  || tecla == "ArrowRight") {
           if (quadrados[indice + 1] != 1) {
             quadrados[indice + 1] = 2;
             quadrados[indice] = 0;
           }
           console.log(lista)
         }
+        // Vitória
         if (quadrados[482] == 2) {
-          console.log("oi 9vinha")
+          ganhou();
         }
       });
     })
+
+    function ganhou(){
+      setModal(true);
+      new Audio("Vitoria.mp3").play();
+    }
 
   return (
 
@@ -61,6 +74,16 @@ export default function Home() {
         })}
 
       </div>
+      {
+        modal &&
+        <div className="absolute top-0 right-0 left-0 bottom-0 backdrop-blur-[5px] flex justify-center items-center">
+        <div className="bg-white shadow-10 border-4 h-2/4 w-2/6 rounded-md text-yellow-500 flex items-center justify-center text-4xl relative">
+        <button className="absolute top-2 right-4 text-xl" onClick={()=>{setModal(false)}}>x</button>
+            Você ganhou!
+        </div>
+      </div>
+      }
+      
     </div>
 
   )
