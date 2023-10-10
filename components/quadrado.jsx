@@ -11,13 +11,13 @@ export default function Quadrado(props) {
         document.body.addEventListener("keypress", (event) => {
             if (lista[props.chave] == 2) {
                 setIsHere(true);
-            } else {
+            } else if(isHere){
                 setIsHere(false);
             }
         });
     })
     // Definindo a cor do quadrado
-    let cor = props.parede ? "bg-black" : "bg-white";
+    let cor = props.parede ? "bg-black" : isHere ? "bg-blue-500": "bg-white";
     
     return (
         <>
