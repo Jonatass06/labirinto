@@ -39,6 +39,7 @@ export default function Home() {
           quadrados[indice + 1] = 2;
           quadrados[indice] = 0;
         }
+        console.log(lista)
       }
       if (quadrados[482] == 2) {
         console.log("oi 9vinha")
