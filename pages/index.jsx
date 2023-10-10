@@ -32,6 +32,7 @@ export default function Home() {
     lista[482] = 0;
     lista[23] = 2;
     setModal(false)
+    document.dispatchEvent(new KeyboardEvent('keydown', {'key': ''}));
   }
 
   return (

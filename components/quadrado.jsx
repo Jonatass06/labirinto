@@ -22,7 +22,7 @@ export default function Quadrado(props) {
         <>
             <div className={"w-8 h-8 " + cor} >
                 {
-                    isHere ? <img src="VASCO.png" alt="" /> : <></>
+                    isHere && <img src="VASCO.png" alt="" />
                 }
             </div>
         </>
