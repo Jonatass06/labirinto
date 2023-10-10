@@ -2,7 +2,6 @@ import Quadrado from "@/components/quadrado"
 import lista from "@/data/lista";
 import { useEffect, useState } from "react";
 import atualizarArray from "../data/atualizarArray";
-import criarTabuleiro from "../data/criarTabuleiro";
 
 
 export default function Home() {
